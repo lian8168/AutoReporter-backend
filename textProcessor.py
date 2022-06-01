@@ -1,6 +1,8 @@
-
+import Database
 from common import *
 from tqdm import tqdm
+from NerProcessor import Ner
+import json
 
 
 def create_word_dict_txt(db):
@@ -115,23 +117,6 @@ class TextProcessor:
 
 
 if __name__ == '__main__':
-    # db = Database.Database()
-    # create_word_dict_txt(db)
-    # create_user_dict_txt()
-    # write_loc_without_city()
-    # with open('lda.json', 'r', encoding='UTF-8') as lda_file:
-    #     lda_text = json.load(lda_file)
-    # lda_file.close()
-    # with open('new_word.txt', 'w', encoding='UTF-8') as out_f:
-    #     for lda in lda_text:
-    #         for line in lda:
-    #             out_f.writelines(line)
-    #             out_f.writelines(' ')
-    #         out_f.writelines('\n')
-    # out_f.close()
-    # text_processor = Ner('./checkpoint/loc', ['LOC'], 256, 256, 0.005, 5e-5, 0.5, 1000)
-    # x = text_processor.perdict("真的很害怕要去重庆难以忘记在高架桥上迷路发现导航指的是桥下的绝望和痛苦")
-    # print(x)
     texts = []
     with open("C:/Users/lyc/Desktop/导航迷路.txt", 'r', encoding='UTF-8') as file:
         for line in file.readlines():
